@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loud Bastard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            background: #000000;
+            color: #c0c0c0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 500px;
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            font-weight: 700;
+            letter-spacing: 8px;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .message {
+            font-size: 0.9rem;
+            line-height: 2;
+            margin-bottom: 3rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: #333;
+            margin: 0 auto 3rem auto;
+        }
+
+        a {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border: 1px solid #444;
+            padding: 1rem 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            border-color: #ffffff;
+            background: #0a0a0a;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 1rem;
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff0000;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: 1px 0 #0000ff;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(10% 0 80% 0); }
+            20% { clip-path: inset(50% 0 30% 0); }
+            100% { clip-path: inset(70% 0 10% 0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(80% 0 5% 0); }
+            20% { clip-path: inset(10% 0 60% 0); }
+            100% { clip-path: inset(40% 0 20% 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="logo.png" width="350"/></h1>
+        <!--
+        <h1 class="glitch" data-text="LOUD BASTARD">LOUD BASTARD</h1>
+        <div class="divider"></div>
+        -->
+
+        <p class="message">
+            This project is classified.<br>
+            Access restricted.<br>
+            Authorized personnel only.
+        </p>
+        
+        <a href="https://github.com/LoudBastard" target="_blank">
+            GitHub Organization
+        </a>
+    </div>
+
+    <footer>
+        ENCRYPTED CONNECTION | SECURE ACCESS
+    </footer>
+</body>
+</html>
